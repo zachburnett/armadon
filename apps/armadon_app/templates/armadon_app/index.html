@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+<body>
+<body>
+        <h1>Adadon Store</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>
+                        <form action="/buy/{{ item.id }}" method="POST">
+                            {% csrf_token %}
+                            <select name='quantity'>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <button type="submit">Buy!</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
+
+</body>
+</html>
+<!-- </head>
+<body>
+     <table>
+  <tr>
+    <th>Item</th>
+    <th>Price</th>
+    <th>Quanity/Actions</th>
+  </tr>
+  <tr>
+    <td>Dojo T-shirt</td>
+    <td>$19.99</td>
+    <td><form action='/buy' method='post'>
+  {% csrf_token %}
+  <select name='quantity'>
+     <option>1</option>
+     <option>2</option>
+     <option>3</option>
+  </select>
+  <input type='hidden' name='price' value='1999' />
+  <input type='submit' value='Buy!' />
+</form></td>
+    
+  </tr>
+  <tr>
+    <td>Dojo sweater</td>
+    <td>$29.99</td>
+    <td><form action='/buy' method='post'>
+  {% csrf_token %}
+  <select name='quantity'>
+     <option>1</option>
+     <option>2</option>
+     <option>3</option>
+  </select>
+  <input type='hidden' name='price' value='2999' />
+  <input type='submit' value='Buy!' />
+</form></td>
+    
+  </tr>
+  <tr>
+    <td>Dojo Cup</td>
+    <td>$4.99</td>
+    <td><form action='/buy' method='post'>
+  {% csrf_token %}
+  <select name='quantity'>
+     <option>1</option>
+     <option>2</option>
+     <option>3</option>
+  </select>
+  <input type='hidden' name='price' value='499' />
+  <input type='submit' value='Buy!' />
+</form></td>
+  </tr>
+  <tr>
+    <td>algorithm book</td>
+    <td>$49.99</td>
+    <td><form action='/buy' method='post'>
+  {% csrf_token %}
+  <select name='quantity'>
+     <option>1</option>
+     <option>2</option>
+     <option>3</option>
+  </select>
+  <input type='hidden' name='price' value='4999' />
+  <input type='submit' value='Buy!' />
+</form></td>
+  </tr>    -->
+<!-- </table> -->
+
+

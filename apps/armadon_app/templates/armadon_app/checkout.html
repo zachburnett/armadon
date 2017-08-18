@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Thanks for you mother fucking bussiness!!!</h1><br>
+    <div style=" height: 300px; width: 300px; outline: thin solid blue;">
+        {%if request.session.last_buy%}
+    <h2> we charged your credit card for ${{request.session.last_buy}}</h2><br><br>
+    {%endif%}
+    <p>you have ordered{{request.session.total_items}}   items so far and spend ${{request.session.total_charged}}   with armadon.com!</p><br><br>
+        </div>
+
+
+
+
+        
+    <a href="/go_back">go back</a>
+</body>
+</html>
